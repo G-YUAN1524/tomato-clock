@@ -1,4 +1,4 @@
-# Requires Windows PowerShell / PowerShell 7.
+﻿# Requires Windows PowerShell / PowerShell 7.
 # Builds 番茄时钟.exe with the in-box .NET Framework WPF compiler.
 $ErrorActionPreference = "Stop"
 

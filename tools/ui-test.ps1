@@ -1,4 +1,4 @@
-Add-Type -AssemblyName UIAutomationClient
+﻿Add-Type -AssemblyName UIAutomationClient
 Add-Type -AssemblyName UIAutomationTypes
 Add-Type -TypeDefinition @"
 using System;
