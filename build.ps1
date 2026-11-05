@@ -18,12 +18,25 @@ foreach ($required in @($csc, $icon, $manifest, $xaml, $wav)) {
     }
 }
 
+$systemXaml = Join-Path $framework "System.Xaml.dll"
+if (-not (Test-Path $systemXaml)) {
+    $systemXaml = Join-Path $wpf "System.Xaml.dll"
+}
+if (-not (Test-Path $systemXaml)) {
+    $gacXaml = Get-ChildItem (Join-Path $env:WINDIR "Microsoft.NET\assembly\GAC_MSIL\System.Xaml") `
+        -Recurse -Filter "System.Xaml.dll" -ErrorAction SilentlyContinue |
+        Select-Object -First 1
+    if ($gacXaml) {
+        $systemXaml = $gacXaml.FullName
+    }
+}
+
 $references = @(
     (Join-Path $framework "System.dll"),
     (Join-Path $framework "System.Core.dll"),
     (Join-Path $framework "System.Drawing.dll"),
     (Join-Path $framework "System.Windows.Forms.dll"),
-    (Join-Path $framework "System.Xaml.dll"),
+    $systemXaml,
     (Join-Path $framework "System.Xml.dll"),
     (Join-Path $wpf "PresentationCore.dll"),
     (Join-Path $wpf "PresentationFramework.dll"),

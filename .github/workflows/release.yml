@@ -18,18 +18,18 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Build with in-box WPF compiler
-        shell: powershell
-        run: powershell -NoProfile -ExecutionPolicy Bypass -File .\build.ps1
+        shell: pwsh
+        run: ./build.ps1
 
       - name: Package portable release
-        shell: powershell
+        shell: pwsh
         run: |
           New-Item -ItemType Directory -Force dist | Out-Null
           Copy-Item '番茄时钟.exe','番茄时钟.exe.config','README.md','README.en.md','LICENSE' dist
           Compress-Archive -Path 'dist\*' -DestinationPath 'tomato-clock-windows.zip' -Force
 
       - name: Create GitHub Release
-        shell: powershell
+        shell: pwsh
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
