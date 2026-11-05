@@ -1,0 +1,27 @@
+# Build outputs
+/番茄时钟.exe
+/番茄时钟.exe.config
+/dist/
+*.zip
+
+# Local app data copied into the repository by accident
+settings.ini
+error.log
+*.error.txt
+
+# Python cache (asset generator)
+__pycache__/
+*.py[cod]
+
+# IDE and OS files
+.vs/
+.vscode/
+.idea/
+*.user
+*.suo
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Logs
+*.log

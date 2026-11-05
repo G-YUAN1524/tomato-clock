@@ -1,0 +1,73 @@
+name: Bug report / 问题反馈
+description: 报告一个可复现的问题，帮助改进番茄时钟。
+title: "[Bug] "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢反馈！请尽量提供可复现的步骤和截图。提交前请确认没有附带账号、令牌或其他隐私信息。
+
+  - type: input
+    id: windows
+    attributes:
+      label: Windows 版本
+      description: 例如 Windows 11 24H2（可在「设置 → 系统 → 关于」查看）。
+      placeholder: Windows 11 24H2
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: 番茄时钟版本
+      description: 例如 v1.0.0，或说明是从源码构建的。
+      placeholder: v1.0.0
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: 复现步骤
+      description: 请描述你做了什么，以及问题出现的顺序。
+      placeholder: |
+        1. 打开应用
+        2. 点击「自定义」
+        3. ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: 期望结果
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: 实际结果
+      description: 如有报错信息，请粘贴完整内容。
+    validations:
+      required: true
+
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: 截图或录屏
+      description: 可直接拖入图片。
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: 确认
+      options:
+        - label: 我已经搜索过现有 Issue，没有发现相同问题。
+          required: true
+        - label: 我使用的是最新版本，或已从最新源码重新构建。
+          required: false

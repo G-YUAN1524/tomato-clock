@@ -1,0 +1,49 @@
+name: Feature request / 功能建议
+description: 提出一个让番茄时钟更好的想法。
+title: "[Feature] "
+labels:
+  - enhancement
+body:
+  - type: markdown
+    attributes:
+      value: |
+        欢迎提出建议。请先描述使用场景，再说明你希望的交互；这样比单纯描述实现方式更有帮助。
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: 使用场景 / 想解决的问题
+      placeholder: 我希望在做完一轮后……
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: 期望的方案
+      description: 可以是交互草图、参考应用或具体描述。
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: 考虑过的替代方案
+    validations:
+      required: false
+
+  - type: textarea
+    id: extra
+    attributes:
+      label: 补充信息
+      description: 截图、链接或其他上下文。
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: 确认
+      options:
+        - label: 我已经搜索过现有 Issue，没有发现相同建议。
+          required: true
